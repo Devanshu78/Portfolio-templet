@@ -4,12 +4,7 @@ import React from "react";
 
 export const BackgroundLines = ({ children, className, svgOptions }) => {
   return (
-    <div
-      className={cn(
-        "h-[20rem] md:h-screen w-full bg-black text-white",
-        className
-      )}
-    >
+    <div className={cn("h-screen w-full bg-black text-white", className)}>
       <SVG svgOptions={svgOptions} />
       {children}
     </div>
@@ -73,9 +68,30 @@ const SVG = ({ svgOptions }) => {
     "#6A286F",
     "#604483",
   ];
+
+  const viewBox = {
+    default: "0 0 1440 900",
+    large: "350 50 520 500",
+    medium: "480 50 400 900",
+    small: "550 50 520 900",
+  };
+
+  const screenWidth = window.innerWidth;
+
+  let viewBoxValue;
+  if (screenWidth >= 1440) {
+    viewBoxValue = viewBox.default;
+  } else if (screenWidth >= 1200 && screenWidth < 1440) {
+    viewBoxValue = viewBox.large;
+  } else if (screenWidth >= 768 && screenWidth < 1200) {
+    viewBoxValue = viewBox.medium;
+  } else {
+    viewBoxValue = viewBox.small;
+  }
+
   return (
     <motion.svg
-      viewBox="0 0 1440 900"
+      viewBox={viewBoxValue}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       initial={{ opacity: 0 }}

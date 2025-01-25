@@ -14,6 +14,7 @@ export const HoverEffect = ({ items, className }) => {
     >
       {items.map((item, idx) => (
         <div
+          key={idx}
           className="relative group  block p-2 h-full w-full"
           onMouseEnter={() => setHoveredIndex(idx)}
           onMouseLeave={() => setHoveredIndex(null)}
@@ -49,7 +50,7 @@ export const Card = ({ className, children }) => {
   return (
     <div
       className={cn(
-        "rounded-2xl h-full w-full p-4 overflow-hidden bg-black border dark:border-white/[0.2] border-slate-700 relative z-20",
+        "rounded-2xl h-full w-full p-4 overflow-hidden bg-black border dark:border-white/[0.2] border-slate-700 relative z-20 mt-5 lg:mt-0",
         className
       )}
     >
@@ -63,7 +64,7 @@ export const CardTitle = ({ className, children }) => {
   return (
     <h2
       className={cn(
-        "font-bold tracking-wide mt-4 text-xl md:text-2xl lg:text-4xl bg-clip-text text-transparent bg-gradient-to-r  to-[#DF8908] from-[#B415FF] w-fit py-1",
+        "font-bold tracking-wide text-3xl lg:text-4xl bg-clip-text text-transparent bg-gradient-to-r  to-[#DF8908] from-[#B415FF] w-fit py-1",
         className
       )}
     >
@@ -75,7 +76,7 @@ export const CardDescription = ({ className, children }) => {
   return (
     <p
       className={cn(
-        "mt-8 text-white tracking-wide leading-relaxed text-md",
+        "mt-4 md:mt-8 text-white tracking-wide leading-relaxed text-md",
         className
       )}
     >

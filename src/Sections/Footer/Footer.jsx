@@ -37,16 +37,16 @@ function Footer() {
 
   return (
     <div className="max-w-10/12 mx-auto">
-      <div className="border-b-2 flex items-center justify-between mt-20 pb-5">
+      <div className="border-b-2 md:flex items-center justify-between mt-20 pb-5">
         <div className="pl-2">
           <img src={logo} alt="" />
-          <p className="w-7/12">
+          <p className="w-full py-5 lg:w-7/12">
             I am a frontend developer from, USA with 10 years of experience in
             companies like Microsoft, Tesla and Apple.
           </p>
         </div>
-        <div className="flex gap-10">
-          <div className="flex items-center gap-5 rounded-3xl bg-gray-900 py-2 px-4 w-72">
+        <div className="md:flex gap-2 justify-between items-center space-y-4 w-full md:w-7/12">
+          <div className="flex items-center gap-2 md:gap-5 rounded-3xl bg-gray-900 py-3 px-6 w-auto md:w-72">
             <img src={user_icon} alt="user-icon" className="w-6" />
             <input
               type="email"
@@ -61,16 +61,18 @@ function Footer() {
           </div>
           <button
             onClick={handleSubmit}
-            className="py-4 px-8 rounded-3xl bg-gradient-to-r  to-[#DF8908] from-[#B415FF] font-semibold cursor-pointer outline-none w-48 text-xl"
+            className="py-4 px-8 rounded-3xl bg-gradient-to-r  to-[#DF8908] from-[#B415FF] font-semibold cursor-pointer outline-none w-auto md:w-48 text-base md:text-xl"
           >
             Subscribe
           </button>
         </div>
       </div>
 
-      <div className="my-6 flex justify-between">
-        <p>© {year} Alex Bennett. All rights reserved.</p>
-        <div className="flex gap-5">
+      <div className="my-6 flex flex-col-reverse md:flex-row justify-between gap-5 md:gap-0">
+        <p className="text-sm text-center">
+          © {year} Alex Bennett. All rights reserved.
+        </p>
+        <div className="flex justify-between md:gap-5 text-sm md:text-base text-center">
           <p>Privacy Policy</p>
           <p>Terms & Conditions</p>
           <p>Connect with me</p>

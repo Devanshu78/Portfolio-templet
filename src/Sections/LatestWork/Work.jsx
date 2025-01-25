@@ -6,14 +6,18 @@ import arrow_icon from "../../assets/arrow_icon.svg";
 function Work() {
   return (
     <div id="portfolio">
-      <div className="flex flex-col items-center relative mt-26">
-        <h1 className="text-6xl font-semibold text-center absolute top-0 ">
+      <div className="flex flex-col px-5 md:items-center relative mt-16 md:mt-26">
+        <h1 className="text-5xl md:text-6xl font-semibold absolute top-0 ">
           My Latest Work
         </h1>
-        <img className="w-40 h-auto -mr-76 mt-6" src={theam_pattern} alt="" />
+        <img
+          className="w-32 ml-40 mt-8 sm:ml-76 sm:mt-6 md:w-40 h-auto"
+          src={theam_pattern}
+          alt=""
+        />
       </div>
 
-      <div className="max-w-[100rem] mx-auto px-8 gap-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-10">
+      <div className="max-w-[100rem] mx-auto px-8 gap-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-10 mt-10 md:mt-0">
         {mywork_data.map((work, index) => (
           <img
             key={index}

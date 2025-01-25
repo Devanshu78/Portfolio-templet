@@ -39,15 +39,19 @@ function Contact() {
 
   return (
     <div id="contact">
-      <div className="flex flex-col items-center relative mt-26">
-        <h1 className="text-6xl font-semibold text-center absolute top-0 ">
+      <div className="flex flex-col px-5 md:items-center relative mt-26">
+        <h1 className="text-5xl md:text-6xl font-semibold text-center absolute top-0 ">
           Get in touch
         </h1>
-        <img className="w-40 h-auto -mr-56 mt-6" src={theam_pattern} alt="" />
+        <img
+          className="w-32 md:w-40 h-auto ml-40 md:-mr-16 mt-5 md:mt-6"
+          src={theam_pattern}
+          alt=""
+        />
       </div>
 
-      <div className="flex justify-center max-w-11/12 mx-auto mt-20">
-        <div className="p-10 w-5/12">
+      <div className="md:flex justify-center max-w-11/12 mx-auto mt-10 md:mt-20">
+        <div className="py-10 px-5 w-full md:w-5/12 ">
           <h1 className="text-5xl w-fit font-bold bg-clip-text text-transparent bg-gradient-to-r to-[#DF8908] from-[#B415FF]">
             Let's talk
           </h1>
@@ -72,7 +76,10 @@ function Contact() {
             </div>
           </div>
         </div>
-        <form onSubmit={handleSubmit} className="w-1/2 space-y-5">
+        <form
+          onSubmit={handleSubmit}
+          className="w-full md:w-1/2 space-y-5 px-5 md:px-0"
+        >
           <div className="flex flex-col gap-2">
             <label htmlFor="Name">Your Name</label>
             <input
@@ -83,7 +90,7 @@ function Contact() {
               onChange={(e) => setName(e.target.value)}
               required
               placeholder="Enter your Name"
-              className="bg-gray-900 w-3/4 px-4 py-2 rounded-lg outline-none text-lg"
+              className="bg-gray-900 w-full md:w-3/4 px-4 py-2 rounded-lg outline-none text-lg"
             />
           </div>
           <div className="flex flex-col gap-2">
@@ -96,7 +103,7 @@ function Contact() {
               onChange={(e) => setEmail(e.target.value)}
               required
               placeholder="Enter your Email"
-              className="bg-gray-900 w-3/4 px-4 py-2 rounded-lg outline-none text-lg"
+              className="bg-gray-900 w-full md:w-3/4 px-4 py-2 rounded-lg outline-none text-lg"
             />
           </div>
           <div className="flex flex-col gap-2">
@@ -108,7 +115,7 @@ function Contact() {
               onChange={(e) => setMessage(e.target.value)}
               rows={8}
               placeholder="Enter your message"
-              className="bg-gray-900 w-3/4 px-4 py-2 rounded-lg outline-none text-lg"
+              className="bg-gray-900 w-full md:w-3/4 px-4 py-2 rounded-lg outline-none text-lg"
             ></textarea>
           </div>
           <button
